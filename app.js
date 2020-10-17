@@ -79,7 +79,7 @@ app.use((req, res, next) => {
   err.message = `${err.status} - ${err.name}: Unfortunately, it looks like the resource that you're looking for does not exist.`;
 
   console.log('404 error handler called', { err });
-  res.status(err.status).json({ err: { message: [err.message] } });
+  res.status(err.status).json({ err: { messages: [err.message] } });
 });
 
 /* Global error handler */
@@ -91,7 +91,7 @@ app.use((err, req, res, next) => {
 
   console.log('Global error handler called', { err });
 
-  res.status(err.status).json({ err: { message: [err.message] } });
+  res.status(err.status).json({ err: { messages: [err.message] } });
 });
 
 module.exports = app;

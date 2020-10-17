@@ -5,7 +5,7 @@ const { Truth } = require('../models');
 
 
 /* GET Truths */
-router.get('/truths', (req, res, next) => {
+router.get('/', (req, res, next) => {
   console.log('Truths route');
   res.send('Truths route');
 });

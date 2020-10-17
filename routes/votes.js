@@ -6,7 +6,7 @@ const { User, Truth } = require('../models');
 
 
 /* GET Support Votes */
-router.get('/truths/:id/supportvote', (req, res, next) => {
+router.get('/:id/supportvote', (req, res, next) => {
   console.log('Truths Support Votes route');
   res.send('Truths Support Votes route');
 });

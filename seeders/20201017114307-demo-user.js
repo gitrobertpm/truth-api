@@ -7,7 +7,7 @@ module.exports = {
     await queryInterface.bulkInsert('Users', [
       {
         "id": 1,
-        userName: "Luke Skywalker",
+        userName: 'Luke Skywalker',
         emailAddress: 'luke@skywalker.com',
         password: bcryptjs.hashSync('pass'),
         createdAt: new Date(),
@@ -15,8 +15,32 @@ module.exports = {
       },
       {
         "id": 2,
-        userName: "Han Solo",
+        userName: 'Han Solo',
         emailAddress: 'han@solo.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        "id": 3,
+        userName: 'Mark Twain',
+        emailAddress: 'mark@twain.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        "id": 4,
+        userName: 'Albert Einstein',
+        emailAddress: 'albert@einstein.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        "id": 5,
+        userName: 'Winnie The Pooh',
+        emailAddress: 'winnie@thepooh.com',
         password: bcryptjs.hashSync('pass'),
         createdAt: new Date(),
         updatedAt: new Date()

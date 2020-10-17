@@ -25,35 +25,35 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    truth: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: {
         args: true,
-        msg: 'Sorry, that title already exists'
+        msg: 'Sorry, a truth with by that name already exists'
       },
       validate: {
         notEmpty: {
           args: true,
-          msg: 'Please provide a title'
+          msg: 'Please give a name to the truth you are sharing'
         },
         notNull: {
           args: true,
-          msg: 'Please provide a title'
+          msg: 'Please give a name to the truth you are sharing'
         },
       }
     },
-    description: {
+    argument: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         notEmpty: {
           args: true,
-          msg: 'Please provide a description'
+          msg: 'Please make an argument to defend the truth you are sharing'
         },
         notNull: {
           args: true,
-          msg: 'Please provide a description'
+          msg: 'Please make an argument to defend the truth you are sharing'
         },
       }
     },
@@ -62,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: {
           args: true,
-          msg: 'Please provide tags'
+          msg: 'If you are going to provide some tags, then provide some tags, yo!'
         }
       }
     },

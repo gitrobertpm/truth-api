@@ -45,14 +45,14 @@ exports.authenticateUser = async (req, res, next) => {
 
       // If the passwords match...
       if (authenticated) {
-        console.log(`Authentication successful for: ${user.firstName}`);
+        console.log(`Authentication successful for: ${user.userName}`);
 
         // Then store the retrieved user object on the request object
         // so any middleware functions that follow this middleware function
         // will have access to the user's information.
         req.currentUser = user;
       } else {
-        message = `Authentication failure for: ${user.firstName}`;
+        message = `Authentication failure for: ${user.userName}`;
       }
     } else {
       message = `User not found for email: ${credentials.name}`;

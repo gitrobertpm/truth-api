@@ -8,11 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      truth: {
+        allowNull: false,
         type: Sequelize.STRING,
         unique: true
       },
-      description: {
+      argument: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       tags: {
@@ -33,6 +35,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    await queryInterface.addColumn('Truths', 'userId', Sequelize.INTEGER);
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Truths');
