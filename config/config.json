@@ -1,0 +1,14 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./truth.db"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "./truth.db"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres"
+  }
+}
