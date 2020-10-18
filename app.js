@@ -29,16 +29,10 @@ app.use(morgan('dev'));
 /* json middleware — helps with being able to use req.body in route handlers */
 app.use(express.json());
 
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/static', express.static(path.join(__dirname, 'public')));
 
 
 /* Test the DB connection */
@@ -84,6 +78,7 @@ app.use((req, res, next) => {
   console.log('404 error handler called'.red, err);
   res.status(err.status).json(err.message);
 });
+
 
 /* Global error handler */
 app.use((err, req, res, next) => {
