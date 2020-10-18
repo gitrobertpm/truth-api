@@ -1,0 +1,9 @@
+// .sequelizerc file for customizing path to migrations and seeders
+
+const path = require('path');
+
+module.exports = {
+
+  'seeders-path': path.resolve('seed', 'seeders'),
+  'migrations-path': path.resolve('seed', 'migrations')
+};

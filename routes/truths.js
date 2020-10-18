@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const colors = require('colors');
-const { asyncHandler, authenticateUser } = require('../helpers');
+const { asyncHandler, authenticateUser } = require('./helpers');
 const { Truth, User } = require('../models');
 
 
@@ -24,7 +24,7 @@ const getTruthsSchema = {
 router.get('/', asyncHandler( async (req, res, next) => {
   console.log('Getting truths'.cyan);
   const truths = await Truth.findAll(getTruthsSchema);
-  console.log(`Retrieved ${truths.length} truths`.green);
+  if (truths) console.log(`Retrieved ${truths.length} truths`.green);
   res.status(200).json(truths);
 }));
 
@@ -35,6 +35,7 @@ router.get('/:id', asyncHandler( async (req, res, next) => {
   console.log(`Getting truth: ${id}`.cyan);
   const truth = await Truth.findByPk(id, getTruthsSchema);
 
+  // If Truth exists, return it, else pass error to global error handler
   if (truth) {
     console.log(`Retrieved truth: ${truth.truth}`.green);
     res.status(200).json(truth);
@@ -50,6 +51,8 @@ router.get('/:id', asyncHandler( async (req, res, next) => {
 router.post('/', authenticateUser, asyncHandler( async (req, res, next) => {
   const authenticatedUser = req.currentUser;
   const body = req.body;
+
+  // Set new Truth's userId property
   body.userId = authenticatedUser.id;
 
   if (body) console.log(`Creating new Truth: ${body.truth}`.cyan);
@@ -59,28 +62,81 @@ router.post('/', authenticateUser, asyncHandler( async (req, res, next) => {
 }));
 
 
-/* PUT Truths */
+/* PUT update existing Truth */
 router.put('/:id', authenticateUser, asyncHandler( async (req, res, next) => {
   const authenticatedUser = req.currentUser;
+  const id = req.params.id;
   const body = req.body;
-  // body.userId = authenticatedUser.id;
+  console.log(`Getting truth: ${id}`.cyan);
+  const truth = await Truth.findByPk(id);
 
-  // if (body) console.log(`Creating new Truth: ${body.truth}`.cyan);
-  // const truth = await Truth.create(body);
-  // if (truth) console.log(`Created Truth: ${truth.id}`.green);
-  // res.status(201).location(`/api/truths/${truth.id}`).end();
+  // Handle null req.body
+  if (!Object.keys(body).length) {
+    const err = new Error();
+    err.name = 'SequelizeValidationError';
+    err.status = 400;
+    err.errors = [{message: `Truth field can't be empty`}, {message: `Argument field can't be empty`}];
+    next(err);
+  }
+
+  // Handle empty values
+  if (body.truth === '' || body.argument === '') {
+    const err = new Error();
+    err.name = 'SequelizeValidationError';
+    err.status = 400;
+    err.errors = [];
+    if (body.truth === '') err.errors.push({message: `Truth field can't be empty`});
+    if (body.argument === '') err.errors.push({message: `Argument field can't be empty`});
+    next(err);
+  }
+
+  // If Truth exists, update it, else pass error to global error handler
+  if (truth) {
+
+    // If authed user owns course, update it, else pass 403 error to global error handler
+    if (authenticatedUser.id === truth.userId) {
+      await truth.update( { ...body } );
+      console.log(`Updated truth: ${id}`.green);
+      res.status(204).end();
+    } else {
+      const err = new Error('The resource you are trying to update does not belong to you.');
+      err.status = 403;
+      next(err);
+    }
+
+  } else {
+    const err = new Error('The resource you are trying to update does not appear to exist.');
+    err.status = 404;
+    next(err);
+  }
 }));
 
 /* DELETE Truths */
 router.delete('/:id', authenticateUser, asyncHandler( async (req, res, next) => {
   const authenticatedUser = req.currentUser;
-  const body = req.body;
-  // body.userId = authenticatedUser.id;
+  const id = req.params.id;
+  console.log(`Getting truth: ${id}`.cyan);
+  const truth = await Truth.findByPk(id);
 
-  // if (body) console.log(`Creating new Truth: ${body.truth}`.cyan);
-  // const truth = await Truth.create(body);
-  // if (truth) console.log(`Created Truth: ${truth.id}`.green);
-  // res.status(201).location(`/api/truths/${truth.id}`).end();
+  // If Truth exists, delete it, else pass error to global error handler
+  if (truth) {
+
+    // If authed user owns course, delete it, else pass 403 error to global error handler
+    if (authenticatedUser.id === truth.userId) {
+      await truth.destroy();
+      console.log(`Deleted truth: ${id}`.green);
+      res.status(204).end();
+    } else {
+      const err = new Error('The resource you are trying to delete does not belong to you.');
+      err.status = 403;
+      next(err);
+    }
+
+  } else {
+    const err = new Error('The resource you are trying to delete does not appear to exist.');
+    err.status = 404;
+    next(err);
+  }
 }));
 
 module.exports = router;

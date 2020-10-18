@@ -6,7 +6,7 @@
 const auth = require('basic-auth');
 const bcryptjs = require('bcryptjs');
 const colors = require('colors');
-const { User } = require('../models');
+const { User } = require('../../models');
 
 
 /* Async try/catch */
