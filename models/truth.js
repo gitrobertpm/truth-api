@@ -30,16 +30,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: {
         args: true,
-        msg: 'Sorry, a truth with by that name already exists'
+        msg: 'Sorry, that exact truth has already been shared here.'
       },
       validate: {
         notEmpty: {
           args: true,
-          msg: 'Please give a name to the truth you are sharing'
+          msg: 'An empty string may somehow feel true in some strange and metaphysical way, but it actually evaluates to false. So please enter the truth you wish to share in the field provided before submitting. 😉'
         },
         notNull: {
           args: true,
-          msg: 'Please give a name to the truth you are sharing'
+          msg: 'An empty string may somehow feel true in some strange and metaphysical way, but it actually evaluates to false. So please enter the truth you wish to share in the field provided before submitting. 😉'
         },
       }
     },
@@ -49,22 +49,16 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: {
           args: true,
-          msg: 'Please make an argument to defend the truth you are sharing'
+          msg: 'Please make an argument to defend the truth you are sharing.'
         },
         notNull: {
           args: true,
-          msg: 'Please make an argument to defend the truth you are sharing'
+          msg: 'Please make an argument to defend the truth you are sharing.'
         },
       }
     },
     tags: {
       type: DataTypes.STRING,
-      validate: {
-        notEmpty: {
-          args: true,
-          msg: 'If you are going to provide some tags, then provide some tags, yo!'
-        }
-      }
     },
     supportVotes: DataTypes.INTEGER,
     challengeVotes: DataTypes.INTEGER
@@ -72,5 +66,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Truth',
   });
+
   return Truth;
 };

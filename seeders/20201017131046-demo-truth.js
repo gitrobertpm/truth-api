@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         "id": 5,
-        truth: 'People say nothing is impossible, but I do nothing all the time',
+        truth: 'People say nothing is impossible, but I do nothing every day',
         argument: 'That which is, is also the opposite of its opposite. The act of not doing is also an act of doing not.',
         tags: 'Cartoons, Simple Wisdom, Language Paradox, Zen Koan',
         createdAt: new Date(),

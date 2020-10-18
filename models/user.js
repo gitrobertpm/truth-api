@@ -64,10 +64,6 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: 'Please provide a valid email address'
         },
-        notEmpty: {
-          args: true,
-          msg: 'Please provide a email address'
-        },
         notNull: {
           args: true,
           msg: 'Please provide a email address'
@@ -79,8 +75,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         len: {
-          args: [4, 10],
-          msg: 'Password must be between 4 and 10 characters in length'
+          args: [[3, 21]],
+          msg: 'Password must be at least 4 and no more than 20 characters in length'
         },
         notEmpty: {
           args: true,

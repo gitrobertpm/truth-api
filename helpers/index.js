@@ -5,10 +5,11 @@
 
 const auth = require('basic-auth');
 const bcryptjs = require('bcryptjs');
+const colors = require('colors');
 const { User } = require('../models');
 
 
-/* try catch asynchronously  */
+/* Async try/catch */
 exports.asyncHandler = (cb) => {
   return async (req,res,next) => {
     try {
@@ -45,7 +46,7 @@ exports.authenticateUser = async (req, res, next) => {
 
       // If the passwords match...
       if (authenticated) {
-        console.log(`Authentication successful for: ${user.userName}`);
+        console.log(`Authentication successful for: ${user.userName}`.green);
 
         // Then store the retrieved user object on the request object
         // so any middleware functions that follow this middleware function
@@ -58,12 +59,12 @@ exports.authenticateUser = async (req, res, next) => {
       message = `User not found for email: ${credentials.name}`;
     }
   } else {
-    message = 'Auth header not found';
+    message = 'Access denied!  Auth header not found';
   }
 
   // If user authentication failed...
   if (message) {
-    console.warn(message);
+    console.warn(`${message}`.red);
 
     // Return a response with a 401 Unauthorized HTTP status code.
     res.status(401).json({ message });
