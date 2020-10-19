@@ -52,13 +52,8 @@ app.use(cookieParser());
 })();
 
 
-
-/* Root route redirect to the '/api/' route */
-app.get('/', (req, res) => {
-  res.redirect('/api');
-});
-
-app.use('/api', indexRouter);
+/* Routes */
+app.use(indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/truths', truthsRouter);
 

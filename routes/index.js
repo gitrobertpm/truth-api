@@ -4,7 +4,7 @@ const router = express.Router();
 /* GET Home */
 router.get('/', (req, res, next) => {
   console.log('Home route');
-  res.redirect('/truths');
+  res.redirect('api/truths');
 });
 
 module.exports = router;
