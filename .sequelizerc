@@ -3,7 +3,6 @@
 const path = require('path');
 
 module.exports = {
-
   'seeders-path': path.resolve('seed', 'seeders'),
   'migrations-path': path.resolve('seed', 'migrations')
 };
