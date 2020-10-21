@@ -25,43 +25,43 @@ const asyncHandler = (cb) => {
 
 
 /**
- * Undo migrations
+ * Undo seeds
  */
-// asyncHandler(async () => {
-//   console.log('Undoing migrations'.cyan);
+asyncHandler(async () => {
+  console.log('Undoing seeds'.cyan);
   
-//   execSync("npx sequelize-cli db:migrate:undo:all", (error, stdout, stderr) => {
-//     if (error) {
-//         console.log(`error: ${error.message}`.red);
-//         return;
-//     }
-//     if (stderr) {
-//         console.log(`stderr: ${stderr}`.red);
-//         return;
-//     }
-//     console.log(`stdout: ${stdout}`.red);
-//   });
-// })();
+  execSync("npx sequelize-cli db:seed:undo:all", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`.red);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`.red);
+        return;
+    }
+    console.log(`stdout: ${stdout}`.red);
+  });
+})();
 
 
 /**
- * Undo seeds
+ * Undo migrations
  */
-// asyncHandler(async () => {
-//   console.log('Undoing seeds'.cyan);
+asyncHandler(async () => {
+  console.log('Undoing migrations'.cyan);
   
-//   execSync("npx sequelize-cli db:seed:undo:all", (error, stdout, stderr) => {
-//     if (error) {
-//         console.log(`error: ${error.message}`.red);
-//         return;
-//     }
-//     if (stderr) {
-//         console.log(`stderr: ${stderr}`.red);
-//         return;
-//     }
-//     console.log(`stdout: ${stdout}`.red);
-//   });
-// })();
+  execSync("npx sequelize-cli db:migrate:undo:all", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`.red);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`.red);
+        return;
+    }
+    console.log(`stdout: ${stdout}`.red);
+  });
+})();
 
 
 /**
@@ -71,7 +71,7 @@ asyncHandler(async () => {
   const dbPath = './truth.db';
 
   if (fs.existsSync(dbPath)) {
-    console.log('Removing current database file'.red);
+    console.log('Removing current database file'.cyan);
     fs.unlinkSync(dbPath);
   }
 })();
@@ -81,7 +81,7 @@ asyncHandler(async () => {
  * Run migrations
  */
 asyncHandler(async () => {
-  console.log('Running migrations to create new database file and tables'.cyan);
+  console.log('Running migrations to create new database file and tables'.green);
   
   execSync("npx sequelize-cli db:migrate", (error, stdout, stderr) => {
     if (error) {
@@ -99,7 +99,7 @@ asyncHandler(async () => {
 
 // Seeding tables
 asyncHandler(async () => {
-  console.log('Seeding tables'.cyan);
+  console.log('Seeding tables'.green);
 
   execSync("npx sequelize-cli db:seed:all", (error, stdout, stderr) => {
     if (error) {

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const colors = require('colors');
 const { asyncHandler, authenticateUser } = require('./helpers');
-const { Truth, User } = require('../models');
+const { Truth, User, Vote } = require('../models');
 
 
 /* Schema for defining Truth data to return when responding to GET Truth requests */
@@ -15,7 +15,21 @@ const getTruthsSchema = {
     attributes: {
       exclude: ['createdAt', 'updatedAt', 'password'],
     },
-    as: 'truthTeller',
+    as: 'truthsTeller',
+  },
+  {
+    model: Vote,
+    attributes: {
+      exclude: ['createdAt', 'updatedAt'],
+    },
+    include: [{
+      model: User,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt', 'password']
+      },
+      as: 'voter'
+    }],
+    as: 'truthsVotes',
   }]
 };
 
@@ -40,7 +54,7 @@ router.get('/:id', asyncHandler( async (req, res, next) => {
     console.log(`Retrieved truth: ${truth.truth}`.green);
     res.status(200).json(truth);
   } else {
-    const err = new Error('The resource you requested does not appear to exist');
+    const err = new Error('The resource you requested does not appear to exist.');
     err.status = 404;
     next(err);
   }
@@ -68,14 +82,13 @@ router.put('/:id', authenticateUser, asyncHandler( async (req, res, next) => {
   const id = req.params.id;
   const body = req.body;
   console.log(`Getting truth: ${id}`.cyan);
-  const truth = await Truth.findByPk(id);
 
   // Handle null req.body
   if (!Object.keys(body).length) {
     const err = new Error();
     err.name = 'SequelizeValidationError';
     err.status = 400;
-    err.errors = [{message: `Truth field can't be empty`}, {message: `Argument field can't be empty`}];
+    err.errors = [{message: `Truth field can't be empty.`}, {message: `Argument field can't be empty.`}];
     next(err);
   }
 
@@ -85,12 +98,14 @@ router.put('/:id', authenticateUser, asyncHandler( async (req, res, next) => {
     err.name = 'SequelizeValidationError';
     err.status = 400;
     err.errors = [];
-    if (body.truth === '') err.errors.push({message: `Truth field can't be empty`});
-    if (body.argument === '') err.errors.push({message: `Argument field can't be empty`});
+    if (body.truth === '') err.errors.push({message: `Truth field can't be empty.`});
+    if (body.argument === '') err.errors.push({message: `Argument field can't be empty.`});
     next(err);
   }
 
   // If Truth exists, update it, else pass error to global error handler
+  const truth = await Truth.findByPk(id);
+  
   if (truth) {
 
     // If authed user owns course, update it, else pass 403 error to global error handler

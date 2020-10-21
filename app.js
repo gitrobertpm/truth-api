@@ -11,6 +11,7 @@ const { sequelize } = require('./models')
 const indexRouter = require('./routes');
 const usersRouter = require('./routes/users');
 const truthsRouter = require('./routes/truths');
+const votesRouter = require('./routes/votes');
 
 /* Variable to enable global error logging */
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
@@ -39,15 +40,15 @@ app.use(cookieParser());
   try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully'.green);
-  } catch (error) {
-    console.error('Unable to connect to the database: '.red, error);
+  } catch (err) {
+    console.error(`Unable to connect to the database: ${err}`.red);
   }
 
   try {
     await sequelize.sync();
     console.log('Database synced successfully'.green);
-  } catch (error) {
-    console.error('Unable to sync the database: '.red, error);
+  } catch (err) {
+    console.error(`Unable to sync the database: ${err}`.red);
   }
 })();
 
@@ -56,6 +57,7 @@ app.use(cookieParser());
 app.use(indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/truths', truthsRouter);
+app.use('/api/votes', votesRouter);
 
 
 /* ERROR HANDLERS */

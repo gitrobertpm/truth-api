@@ -11,9 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Truth.belongsTo(models.User, {
-        as: 'truthTeller',
+        as: 'truthsTeller',
         foreignKey: {
           fieldName: 'userId',
+          allowNull: false,
+        },
+      });
+      Truth.hasMany(models.Vote, {
+        as: 'truthsVotes',
+        foreignKey: {
+          fieldName: 'truthId',
           allowNull: false,
         },
       });

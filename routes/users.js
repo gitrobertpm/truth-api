@@ -3,7 +3,7 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const colors = require('colors');
 const { asyncHandler, authenticateUser } = require('./helpers');
-const { User, Truth } = require('../models');
+const { User, Truth, Vote } = require('../models');
 
 
 /* Schema for defining User data to return when responding to GET Truth requests */
@@ -13,14 +13,28 @@ const getUsersSchema = emailAddress => {
       emailAddress: emailAddress
     }, 
     attributes: { 
-      exclude: ['createdAt', 'updatedAt'],
+      exclude: ['createdAt', 'updatedAt', 'password'],
     },
     include: [{
       model: Truth,
       attributes: {
         exclude: ['createdAt', 'updatedAt'],
       },
-      as: 'truthTeller',
+      as: 'usersTruths',
+    },
+    {
+      model: Vote,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt'],
+      },
+      include: [{
+        model: Truth,
+        attributes: {
+          exclude: ['createdAt', 'updatedAt']
+        },
+        as: 'truthVotedOn'
+      }],
+      as: 'usersVotes',
     }]
   }
 };
