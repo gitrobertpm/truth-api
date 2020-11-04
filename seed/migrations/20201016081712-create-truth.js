@@ -40,3 +40,5 @@ module.exports = {
     await queryInterface.dropTable('Truths');
   }
 };
+
+// await queryInterface.addColumn('Truths', 'userId', Sequelize.INTEGER);

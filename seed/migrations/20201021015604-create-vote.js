@@ -26,3 +26,6 @@ module.exports = {
     await queryInterface.dropTable('Votes');
   }
 };
+
+// await queryInterface.addColumn('Votes', 'userId', Sequelize.INTEGER);
+// await queryInterface.addColumn('Votes', 'truthId', Sequelize.INTEGER);
