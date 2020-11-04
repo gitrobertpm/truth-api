@@ -21,8 +21,6 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
-    await queryInterface.addColumn('Votes', 'userId', Sequelize.INTEGER);
-    await queryInterface.addColumn('Votes', 'truthId', Sequelize.INTEGER);
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Votes');
