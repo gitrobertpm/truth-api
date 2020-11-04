@@ -10,7 +10,7 @@ module.exports = {
       },
       truth: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         unique: true
       },
       argument: {
