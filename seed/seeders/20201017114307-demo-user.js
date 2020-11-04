@@ -44,6 +44,54 @@ module.exports = {
         password: bcryptjs.hashSync('pass'),
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        id: 6,
+        userName: 'Chuang Tzu',
+        emailAddress: 'chang@tzu.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 7,
+        userName: 'Maya Angelou',
+        emailAddress: 'maya@angelou.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 8,
+        userName: 'Helen Keller',
+        emailAddress: 'helen@keller.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 9,
+        userName: 'Socrates',
+        emailAddress: 'so@crates.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 10,
+        userName: 'Eleanore Roosevelt',
+        emailAddress: 'eleanore@roosevelt.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 11,
+        userName: 'Joe Walsh',
+        emailAddress: 'joe@walsh.com',
+        password: bcryptjs.hashSync('pass'),
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
   ]);
   },
