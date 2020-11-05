@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     truth: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       unique: {
         args: true,
