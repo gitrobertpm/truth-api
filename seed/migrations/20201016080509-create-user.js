@@ -34,6 +34,15 @@ module.exports = {
       social: {
         type: Sequelize.STRING
       },
+      rank: {
+        type: Sequelize.STRING
+      },
+      settings: {
+        type: Sequelize.TEXT
+      },
+      flags: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

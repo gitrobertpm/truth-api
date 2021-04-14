@@ -35,11 +35,11 @@ const getTruthsSchema = {
 
 
 /* GET Truths */
-router.get('/', asyncHandler( async (req, res, next) => {
+router.get('/', asyncHandler( async (req, res, next) => { //throw new Error(500);
   console.log('Getting truths'.cyan);
   const truths = await Truth.findAll(getTruthsSchema);
   if (truths) console.log(`Retrieved ${truths.length} truths`.green);
-  res.status(200).json(truths);
+  res.status(200).json(truths.reverse());
 }));
 
 
@@ -72,7 +72,7 @@ router.post('/', authenticateUser, asyncHandler( async (req, res, next) => {
   if (body) console.log(`Creating new Truth: ${body.truth}`.cyan);
   const truth = await Truth.create(body);
   if (truth) console.log(`Created Truth: ${truth.id}`.green);
-  res.status(201).location(`/api/truths/${truth.id}`).end();
+  res.status(201).location(`/api/truths/${truth.id}`).json({success: 'success', id: truth.id});
 }));
 
 
@@ -112,16 +112,18 @@ router.put('/:id', authenticateUser, asyncHandler( async (req, res, next) => {
     if (authenticatedUser.id === truth.userId) {
       await truth.update( { ...body } );
       console.log(`Updated truth: ${id}`.green);
-      res.status(204).end();
+      res.status(200).json({success: 'success', id: truth.id});
     } else {
-      const err = new Error('The resource you are trying to update does not belong to you.');
+      const err = new Error();
       err.status = 403;
+      err.errors = [{message: 'The resource you are trying to update does not belong to you.'}]
       next(err);
     }
 
   } else {
-    const err = new Error('The resource you are trying to update does not appear to exist.');
+    const err = new Error();
     err.status = 404;
+    err.errors = [{message: 'The resource you are trying to update does not appear to exist.'}]
     next(err);
   }
 }));
@@ -140,15 +142,17 @@ router.delete('/:id', authenticateUser, asyncHandler( async (req, res, next) => 
     if (authenticatedUser.id === truth.userId) {
       await truth.destroy();
       console.log(`Deleted truth: ${id}`.green);
-      res.status(204).end();
+      res.status(200).json({success: 'success'});
     } else {
-      const err = new Error('The resource you are trying to delete does not belong to you.');
+      const err = new Error();
+      err.errors = [{message: 'The resource you are trying to delete does not belong to you.'}]
       err.status = 403;
       next(err);
     }
 
   } else {
-    const err = new Error('The resource you are trying to delete does not appear to exist.');
+    const err = new Error();
+    err.errors = [{message: 'The resource you are trying to delete does not appear to exist.'}]
     err.status = 404;
     next(err);
   }

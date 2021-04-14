@@ -42,7 +42,7 @@ const getUsersSchema = emailAddress => {
 
 /* GET Authenticated User */
 router.get('/', authenticateUser, asyncHandler( async (req, res, next) => {
-  const authenticatedUser = req.currentUser;
+  const authenticatedUser = req.currentUser; console.log(authenticatedUser);
   if (authenticatedUser) console.log(`Getting authenticated user with username: ${authenticatedUser.userName}`.cyan);
   const user = await User.findOne(getUsersSchema(authenticatedUser.emailAddress));
   console.log(`Retrieved user: ${user.userName}`.green);
@@ -57,7 +57,7 @@ router.post('/', asyncHandler( async (req, res, next) => {
   if(body.password) body.password = bcryptjs.hashSync(body.password);
   const user = await User.create(body);
   console.log(`Created User: ${user}`.green);
-  res.status(201).location('/').end();
+  res.status(201).location('/').json({success: 'success'});
 }));
 
 module.exports = router;

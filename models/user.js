@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         notNull: {
           args: true,
-          msg: 'Please provide a email address.'
+          msg: 'Please provide an email address.'
         }
       }
     },
@@ -97,8 +97,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     avatar: DataTypes.STRING,
     bio: DataTypes.TEXT,
-    bonafides: DataTypes.STRING,
-    social: DataTypes.STRING
+    bonafides: DataTypes.TEXT,
+    social: DataTypes.STRING,
+    settings: DataTypes.TEXT,
+    flags: DataTypes.TEXT,
+    rank: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'User',

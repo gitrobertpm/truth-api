@@ -42,11 +42,11 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: {
           args: true,
-          msg: 'An empty string may somehow feel true in some strange and metaphysical way, but it actually evaluates to false. So please enter the truth you wish to share in the field provided before submitting. 😉'
+          msg: 'In some strange way and empty string does feel true, but it actually evaluates to false. So please fill in the Truth field. 😉'
         },
         notNull: {
           args: true,
-          msg: 'An empty string may somehow feel true in some strange and metaphysical way, but it actually evaluates to false. So please enter the truth you wish to share in the field provided before submitting. 😉'
+          msg: 'In some strange way and empty string does feel true, but it actually evaluates to false. So please fill in the Truth field. 😉'
         },
       }
     },
@@ -66,9 +66,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     tags: {
       type: DataTypes.STRING,
-    },
-    supportVotes: DataTypes.INTEGER,
-    challengeVotes: DataTypes.INTEGER
+    }
+    // ,
+    // supportVotes: DataTypes.INTEGER,
+    // challengeVotes: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Truth',

@@ -23,7 +23,7 @@ exports.asyncHandler = (cb) => {
 
 /* Authenticate user */
 exports.authenticateUser = async (req, res, next) => {
-  let message = null;
+  let messages = null;
 
   // Parse the user's credentials from the Authorization header.
   const credentials = auth(req);
@@ -53,21 +53,21 @@ exports.authenticateUser = async (req, res, next) => {
         // will have access to the user's information.
         req.currentUser = user;
       } else {
-        message = `Authentication failure for: ${user.userName}`;
+        messages = `Authentication failure for: ${user.userName}`;
       }
     } else {
-      message = `User not found for email: ${credentials.name}`;
+      messages = `User not found for email: ${credentials.name}`;
     }
   } else {
-    message = 'Access denied!  Auth header not found';
+    messages = 'Access denied!  Missing credentials.';
   }
 
   // If user authentication failed...
-  if (message) {
-    console.warn(`${message}`.red);
+  if (messages) {
+    console.warn(`${messages}`.red);
 
     // Return a response with a 401 Unauthorized HTTP status code.
-    res.status(401).json({ message });
+    res.status(401).json({ messages });
   } else {
     // Or if user authentication succeeded...
     // Call the next() method.

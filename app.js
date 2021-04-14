@@ -88,17 +88,21 @@ app.use((err, req, res, next) => {
   // Handle err message and response
   let errResponse = '';
 
-  if (err.name === 'SequelizeValidationError' || err.name === 'SequelizeConstraintError') {
+  if (err.name === 'SequelizeUniqueConstraintError') {
+    err.status = 409;
+    err.message = err.errors.map( err => err.message);
+    errResponse = { status: err.status, name: err.name, messages: err.message };
+  } else if (err.name === 'SequelizeValidationError' || err.name === 'SequelizeConstraintError') {
     err.status = 400;
     err.message = err.errors.map( err => err.message);
-    errResponse = { err: { status: err.status, name: err.name, messages: err.message } };
+    errResponse = { status: err.status, name: err.name, messages: err.message };
   } else {
     err.status = err.status || 500;
     err.message = err.message || `${err.status} - Unfortunately, it looks like the server has encountered a ${err.name}.`;
-    errResponse = `${err.status} - ${err.name}: ${err.message}`;
+    errResponse = { status: err.status, name: err.name, messages: err.message };
   }
 
-  console.log('Global error handler called'.red, err); 
+  console.log('Global error handler called'.red, errResponse); 
   res.status(err.status).json(errResponse);
 });
 
