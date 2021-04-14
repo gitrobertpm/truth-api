@@ -20,12 +20,6 @@ module.exports = {
       tags: {
         type: Sequelize.STRING
       },
-      // supportVotes: {
-      //   type: Sequelize.INTEGER
-      // },
-      // challengeVotes: {
-      //   type: Sequelize.INTEGER
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
