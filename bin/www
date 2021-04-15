@@ -7,6 +7,7 @@
 const app = require('../app');
 const debug = require('debug')('api-backup:server');
 const http = require('http');
+const https = require('https');
 const colors = require('colors');
 
 
@@ -68,7 +69,7 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-const server = http.createServer(app);
+const server = https.createServer(app);
 
 
 /**
