@@ -102,7 +102,7 @@ app.use((err, req, res, next) => {
     errResponse = { status: err.status, name: err.name, messages: err.message };
   }
 
-  console.log('Global error handler called'.red, errResponse); 
+  console.log('Global error handler called'.red, errResponse, err); 
   res.status(err.status).json(errResponse);
 });
 

@@ -4,6 +4,9 @@ const colors = require('colors');
 const { asyncHandler, authenticateUser } = require('./helpers');
 const { Truth, User, Vote } = require('../models');
 
+// So we can use the operator property in sequelize
+const { Op } = require("sequelize");
+
 
 /* Schema for defining Truth data to return when responding to GET Truth requests */
 const getTruthsSchema = { 
@@ -43,6 +46,72 @@ router.get('/', asyncHandler( async (req, res, next) => { //throw new Error(500)
 }));
 
 
+/* GET Searched Truths */
+router.get('/search/:query', asyncHandler( async (req, res, next) => { //throw new Error(500);
+  console.log('Getting searched truths'.cyan);
+  const query = req.params.query;
+
+  // Finding all truths by username in search query
+  const users = await User.findAll({where: { userName: {[Op.substring]: `%${query}%`}}}); 
+  const ids = users.map(user => user.id); 
+
+  // Searching...
+  const truths = await Truth.findAll({
+    where: {
+      [Op.or]: {
+        truth: {
+          [Op.like]: `%${query}%`
+        },
+        argument: {
+          [Op.like]: `%${query}%`
+        },
+        tags: {
+          [Op.like]: `%${query}%`
+        },
+        userId: {
+          [Op.in]: ids
+        },
+      }
+    }, 
+      attributes: { 
+        exclude: ['createdAt', 'updatedAt'],
+      },
+      include: [{
+        model: User,
+        attributes: {
+          exclude: ['createdAt', 'updatedAt', 'password'],
+        },
+        as: 'truthsTeller',
+      },
+      {
+        model: Vote,
+        attributes: {
+          exclude: ['createdAt', 'updatedAt'],
+        },
+        include: [{
+          model: User,
+          attributes: {
+            exclude: ['createdAt', 'updatedAt', 'password']
+          },
+          as: 'voter'
+        }],
+        as: 'truthsVotes',
+      }]
+    
+  });
+
+  if (truths.length) {
+    console.log(`Retrieved ${truths.length} truths`.green);
+    res.status(200).json(truths.reverse());
+  } else {
+    const err = new Error();
+    err.status = 404;
+    err.errors = [{message: 'The resource you requested does not appear to exist.'}];
+    next(err);
+  }
+}));
+
+
 /* GET Truth by id */
 router.get('/:id', asyncHandler( async (req, res, next) => {
   const id = req.params.id;
@@ -54,8 +123,9 @@ router.get('/:id', asyncHandler( async (req, res, next) => {
     console.log(`Retrieved truth: ${truth.truth}`.green);
     res.status(200).json(truth);
   } else {
-    const err = new Error('The resource you requested does not appear to exist.');
+    const err = new Error();
     err.status = 404;
+    err.errors = [{message: 'The resource you requested does not appear to exist.'}];
     next(err);
   }
 }));

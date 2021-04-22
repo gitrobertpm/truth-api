@@ -42,11 +42,11 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: {
           args: true,
-          msg: 'In some strange way and empty string does feel true, but it actually evaluates to false. So please fill in the Truth field. 😉'
+          msg: 'In some strange way an empty string does feel true, but it actually evaluates to false. So please fill in the Truth field before submitting. 😉'
         },
         notNull: {
           args: true,
-          msg: 'In some strange way and empty string does feel true, but it actually evaluates to false. So please fill in the Truth field. 😉'
+          msg: 'In some strange way an empty string does feel true, but it actually evaluates to false. So please fill in the Truth field before submitting. 😉'
         },
       }
     },
