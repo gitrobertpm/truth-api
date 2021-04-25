@@ -209,7 +209,16 @@ router.delete('/:id', authenticateUser, asyncHandler( async (req, res, next) => 
   if (truth) {
 
     // If authed user owns course, delete it, else pass 403 error to global error handler
-    if (authenticatedUser.id === truth.userId) {
+    if (authenticatedUser.id === truth.userId || authenticatedUser.rank.includes('admin')) {
+
+      // Deleting associated votes
+      const votes = await Vote.findAll({where: {truthId: id}}); //console.log('VOTES', votes);
+      if (votes) {
+        const voteIds = votes.map(v => v.id );
+        console.log(`Found ${voteIds.length} related votes to delete`.cyan);
+        await Vote.destroy({where: {id: voteIds}});
+      }
+      
       await truth.destroy();
       console.log(`Deleted truth: ${id}`.green);
       res.status(200).json({success: 'success'});
