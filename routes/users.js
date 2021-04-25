@@ -75,7 +75,7 @@ router.post('/', asyncHandler( async (req, res, next) => {
   if (body) console.log(`Creating new user: ${body.userName}`.cyan);
   if(body.password) body.password = bcryptjs.hashSync(body.password);
 
-  if (body.userName === 'robertpm' && body.emailAddress === 'grobertpm@gmail.com') {
+  if (body.userName === 'robertpm' && body.emailAddress === 'robertpm@robertpm.com') {
     body.rank = 'owner, admin';
   }
 
