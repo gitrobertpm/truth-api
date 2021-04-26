@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
-    // await queryInterface.addColumn('Truths', 'userId', Sequelize.INTEGER);
+    await queryInterface.addColumn('Truths', 'userId', Sequelize.INTEGER);
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Truths');

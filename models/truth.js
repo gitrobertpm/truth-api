@@ -18,11 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       });
       Truth.hasMany(models.Vote, {
-        as: 'truthsVotes',
-        foreignKey: {
-          fieldName: 'truthId',
-          allowNull: false,
-        },
+        as: 'truthsVotes'
       });
     }
   };

@@ -69,7 +69,7 @@ module.exports = {
       {
         id: 8,
         truth: `The world is moved along not just by the mighty shoves of its heroes, but by the aggregate of the tiny pushes of each honest worker.  So while it's normal to want to accomplish great things, we should each strive to accomplish small things as though there were great and noble.`,
-        argument: `See the final line of Walt Whitman's O me! O Life!`,
+        argument: `See the final line of Walt Whitman's [O me! O Life](https://www.poetryfoundation.org/poems/51568/o-me-o-life)!`,
         tags: 'Sociology, Humanity, Value, Miracle, Brilliance, Wisdom, Genius',
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -78,7 +78,9 @@ module.exports = {
       {
         id: 9,
         truth: `The unexamined life is not worth living.`,
-        argument: `Some say that if a tree falls in the forest, and no one is there to hear it, it may not make a sound.  Well, obviously that is ridiculous.  Plenty of events have occurred without anyone there to see them.  Otherwise, the tidal wave of the cosmos would not have been able to form, and we would not be here to observe it.  But all those unobserved events feel kind of sad in a way, like a silent movie flickering in an empty theater.  Moreover, what success is likely to be found in a life that goes largely unexamined?  Consider the card player who sits at the table and places large bets without an agile knowledge of the game.  How shall they fare compared to the sharp, who knows the odds and the math and the poetry of the game?  Not knowing how to play the game of life can get you killed.  Conversely, an intimate understanding that can only come from close examination can give life just the advantage it needs to truly flourish and shine.`,
+        argument: `Some say that if a tree falls in the forest, and no one is there to hear it, it may not make a sound.  Well, obviously that is ridiculous.  Plenty of events have occurred without anyone there to see them.  Otherwise, the tidal wave of the cosmos would not have been able to form, and we would not be here to observe it.  But all those unobserved events feel kind of sad in a way, like a silent movie flickering in an empty theater.
+        
+        Moreover, what success is likely to be found in a life that goes largely unexamined?  Consider the card player who sits at the table and places large bets without an agile knowledge of the game.  How shall they fare compared to the sharp, who knows the odds and the math and the poetry of the game?  Not knowing how to play the game of life can get you killed.  Conversely, an intimate understanding that can only come from close examination can give life just the advantage it needs to truly flourish and shine.`,
         tags: 'Philosophy, Ancient Wisdom, Greeks Philosopher',
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -87,7 +89,9 @@ module.exports = {
       {
         id: 10,
         truth: `No one can make you feel inferior without your consent.`,
-        argument: `Over the course of a life, one inevitably generates lists of that which makes one happy, or sad, or angry, etc.  Likewise, lists are generated containing those we listen to or those whose opinions matter.  Normally, such lists are created by subconscious processes. But lucky mortals as we are, we can pull the creation and curation of those lists out of the subconscious and directly into the realm of the conscious mind.  Additionally, we don't have control over what others say or do.  But we do control how we listen, interpret and respond.`,
+        argument: `Over the course of a life, one inevitably generates lists of that which makes one happy, or sad, or angry, etc.  Likewise, lists are generated containing those we listen to or those whose opinions matter.  Normally, such lists are created by subconscious processes. But lucky mortals as we are, we can pull the creation and curation of those lists out of the subconscious and directly into the realm of the conscious mind.
+        
+        Additionally, we don't have control over what others say or do.  But we do control how we listen, interpret and respond.`,
         tags: 'Strength, Equality, Self Worth',
         createdAt: new Date(),
         updatedAt: new Date(),

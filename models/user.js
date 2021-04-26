@@ -11,18 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.Truth, {
-        as: 'usersTruths',
-        foreignKey: {
-          fieldName: 'userId',
-          allowNull: false,
-        },
+        as: 'usersTruths'
       });
       User.hasMany(models.Vote, {
-        as: 'usersVotes',
-        foreignKey: {
-          fieldName: 'userId',
-          allowNull: false,
-        },
+        as: 'usersVotes'
       });
     }
   };
