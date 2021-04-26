@@ -4,9 +4,9 @@
 
 "use strict";
 
-const fs = require('fs');
+const fs = require("fs");
 const { execSync } = require("child_process");
-const colors = require('colors');
+const colors = require("colors");
 
 
 /**
@@ -28,7 +28,7 @@ const asyncHandler = (cb) => {
  * Undo seeds
  */
 asyncHandler(async () => {
-  console.log('Undoing seeds'.cyan);
+  console.log("Undoing seeds".cyan);
   
   execSync("npx sequelize-cli db:seed:undo:all", (error, stdout, stderr) => {
     if (error) {
@@ -48,7 +48,7 @@ asyncHandler(async () => {
  * Undo migrations
  */
 asyncHandler(async () => {
-  console.log('Undoing migrations'.cyan);
+  console.log("Undoing migrations".cyan);
   
   execSync("npx sequelize-cli db:migrate:undo:all", (error, stdout, stderr) => {
     if (error) {
@@ -68,10 +68,10 @@ asyncHandler(async () => {
  * Check if database file exists and if so, remove it
  */
 asyncHandler(async () => {
-  const dbPath = './truth.db';
+  const dbPath = "./truth.db";
 
   if (fs.existsSync(dbPath)) {
-    console.log('Removing current database file'.cyan);
+    console.log("Removing current database file".cyan);
     fs.unlinkSync(dbPath);
   }
 })();
@@ -81,7 +81,7 @@ asyncHandler(async () => {
  * Run migrations
  */
 asyncHandler(async () => {
-  console.log('Running migrations to create new database file and tables'.green);
+  console.log("Running migrations to create new database file and tables".green);
   
   execSync("npx sequelize-cli db:migrate", (error, stdout, stderr) => {
     if (error) {
@@ -99,7 +99,7 @@ asyncHandler(async () => {
 
 // Seeding tables
 asyncHandler(async () => {
-  console.log('Seeding tables'.green);
+  console.log("Seeding tables".green);
 
   execSync("npx sequelize-cli db:seed:all", (error, stdout, stderr) => {
     if (error) {

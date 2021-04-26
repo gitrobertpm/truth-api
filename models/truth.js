@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 const {
   Model
-} = require('sequelize');
+} = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Truth extends Model {
     /**
@@ -11,14 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Truth.belongsTo(models.User, {
-        as: 'truthsTeller',
         foreignKey: {
-          fieldName: 'userId',
+          fieldName: "userId",
           allowNull: false,
         },
+        as: "truthsTeller",
       });
       Truth.hasMany(models.Vote, {
-        as: 'truthsVotes'
+        // foreignKey: {
+        //   fieldName: "truthId",
+        //   allowNull: false,
+        // },
+        as: "truthsVotes",
       });
     }
   };
@@ -33,16 +37,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: {
         args: true,
-        msg: 'Sorry, that exact truth has already been shared here.'
+        msg: "Sorry, that exact truth has already been shared here."
       },
       validate: {
         notEmpty: {
           args: true,
-          msg: 'In some strange way an empty string does feel true, but it actually evaluates to false. So please fill in the Truth field before submitting. 😉'
+          msg: "In some strange way an empty string does feel true, but it actually evaluates to false. So please fill in the Truth field before submitting. 😉"
         },
         notNull: {
           args: true,
-          msg: 'In some strange way an empty string does feel true, but it actually evaluates to false. So please fill in the Truth field before submitting. 😉'
+          msg: "In some strange way an empty string does feel true, but it actually evaluates to false. So please fill in the Truth field before submitting. 😉"
         },
       }
     },
@@ -52,23 +56,20 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: {
           args: true,
-          msg: 'Please make an argument to defend the truth you are sharing.'
+          msg: "Please make an argument to defend the truth you are sharing."
         },
         notNull: {
           args: true,
-          msg: 'Please make an argument to defend the truth you are sharing.'
+          msg: "Please make an argument to defend the truth you are sharing."
         },
       }
     },
     tags: {
       type: DataTypes.STRING,
     }
-    // ,
-    // supportVotes: DataTypes.INTEGER,
-    // challengeVotes: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Truth',
+    modelName: "Truth",
   });
 
   return Truth;
