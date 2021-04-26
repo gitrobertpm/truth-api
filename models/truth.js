@@ -11,17 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Truth.belongsTo(models.User, {
-        // foreignKey: {
-        //   fieldName: "userId",
-        //   allowNull: false,
-        // },
+        foreignKey: {
+          fieldName: "userId",
+          allowNull: false,
+        },
         as: "truthsTeller",
       });
       Truth.hasMany(models.Vote, {
-        // foreignKey: {
-        //   fieldName: "truthId",
-        //   allowNull: false,
-        // },
         as: "truthsVotes",
       });
     }

@@ -11,17 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.Truth, {
-        // foreignKey: {
-        //   fieldName: "userId",
-        //   allowNull: false,
-        // },
         as: "usersTruths"
       });
       User.hasMany(models.Vote, {
-        // foreignKey: {
-        //   fieldName: "userId",
-        //   allowNull: false,
-        // },
         as: "usersVotes",
       });
     }
