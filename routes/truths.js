@@ -25,17 +25,17 @@ const getTruthsSchema = {
     attributes: {
       exclude: ['createdAt', 'updatedAt'],
     },
-    include: [{
-      model: User,
-      attributes: {
-        exclude: ['createdAt', 'updatedAt', 'password']
-      },
-      as: 'voter'
-    }],
     as: 'truthsVotes',
   }]
 };
 
+// include: [{
+    //   model: User,
+    //   attributes: {
+    //     exclude: ['createdAt', 'updatedAt', 'password']
+    //   },
+    //   as: 'voter'
+    // }],
 
 /* GET Truths */
 router.get('/', asyncHandler( async (req, res, next) => { //throw new Error(500);
@@ -97,7 +97,6 @@ router.get('/search/:query', asyncHandler( async (req, res, next) => { //throw n
         }],
         as: 'truthsVotes',
       }]
-    
   });
 
   if (truths.length) {
