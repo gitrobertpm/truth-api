@@ -13,20 +13,19 @@ const getTruthsSchema = {
   attributes: { 
     exclude: ['createdAt', 'updatedAt'],
   },
-  include: [
-    {
-      model: Vote,
-      attributes: {
-        exclude: ['createdAt', 'updatedAt'],
-      },
-      as: 'truthsVotes',
-    },
-    {
+  include: [{
     model: User,
     attributes: {
       exclude: ['createdAt', 'updatedAt', 'password'],
     },
     as: 'truthsTeller',
+  },
+  {
+    model: Vote,
+    attributes: {
+      exclude: ['createdAt', 'updatedAt'],
+    },
+    as: 'truthsVotes',
   }]
 };
 
