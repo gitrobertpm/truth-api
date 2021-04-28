@@ -15,18 +15,17 @@ const getTruthsSchema = {
   },
   include: [{
     model: User,
+    as: 'truthsTeller',
     attributes: {
       exclude: ['createdAt', 'updatedAt', 'password'],
-    },
-    as: 'truthsTeller',
+    }
   },
   {
     model: Vote,
+    as: 'truthsVotes',
     attributes: {
       exclude: ['createdAt', 'updatedAt'],
-    },
-    as: 'truthsVotes',
-    right: true
+    }
   }]
 };
 
@@ -73,10 +72,7 @@ router.get('/search/:query', asyncHandler( async (req, res, next) => { //throw n
           [Op.in]: ids
         },
       }
-    }, 
-      attributes: { 
-        exclude: ['createdAt', 'updatedAt'],
-      },
+    },
       include: [{
         model: User,
         attributes: {
