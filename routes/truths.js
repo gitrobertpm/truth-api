@@ -26,7 +26,6 @@ const getTruthsSchema = {
       exclude: ['createdAt', 'updatedAt'],
     },
     as: 'truthsVotes',
-    required: false,
     right: true
   }]
 };
