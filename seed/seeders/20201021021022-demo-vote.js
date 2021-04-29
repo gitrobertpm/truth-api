@@ -4,404 +4,404 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Votes', [
       {
-        id: 1,
+        id: "1",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 1
+        userId: "1",
+        truthId: "1"
       },
       {
-        id: 2,
+        id: "2",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 4
+        userId: "1",
+        truthId: "4"
       },
       {
-        id: 3,
+        id: "3",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 5
+        userId: "1",
+        truthId: "5"
       },
       {
-        id: 4,
+        id: "4",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 6
+        userId: "1",
+        truthId: "6"
       },
       {
-        id: 5,
+        id: "5",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 9
+        userId: "1",
+        truthId: "9"
       },
       {
-        id: 6,
+        id: "6",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 2
+        userId: "1",
+        truthId: "2"
       },
       {
-        id: 7,
+        id: "7",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        truthId: 10
+        userId: "1",
+        truthId: "10"
       },
       {
-        id: 8,
+        id: "8",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 2,
-        truthId: 1
+        userId: "2",
+        truthId: "1"
       },
       {
-        id: 9,
+        id: "9",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 2,
-        truthId: 5
+        userId: "2",
+        truthId: "5"
       },
       {
-        id: 10,
+        id: "10",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 2,
-        truthId: 11
+        userId: "2",
+        truthId: "11"
       },
       {
-        id: 11,
+        id: "11",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 3,
-        truthId: 1
+        userId: "3",
+        truthId: "1"
       },
       {
-        id: 12,
+        id: "12",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 3,
-        truthId: 3
+        userId: "3",
+        truthId: "3"
       },
       {
-        id: 13,
+        id: "13",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 3,
-        truthId: 6
+        userId: "3",
+        truthId: "6"
       },
       {
-        id: 14,
+        id: "14",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 3,
-        truthId: 8
+        userId: "3",
+        truthId: "8"
       },
       {
-        id: 15,
+        id: "15",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 3,
-        truthId: 10
+        userId: "3",
+        truthId: "10"
       },
       {
-        id: 16,
+        id: "16",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 4,
-        truthId: 1
+        userId: "4",
+        truthId: "1"
       },
       {
-        id: 17,
+        id: "17",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 4,
-        truthId: 4
+        userId: "4",
+        truthId: "4"
       },
       {
-        id: 18,
+        id: "18",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 4,
-        truthId: 5
+        userId: "4",
+        truthId: "5"
       },
       {
-        id: 19,
+        id: "19",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 4,
-        truthId: 9
+        userId: "4",
+        truthId: "9"
       },
       {
-        id: 20,
+        id: "20",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 4,
-        truthId: 2
+        userId: "4",
+        truthId: "2"
       },
       {
-        id: 21,
+        id: "21",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 4,
-        truthId: 10
+        userId: "4",
+        truthId: "10"
       },
       {
-        id: 22,
+        id: "22",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 6,
-        truthId: 1
+        userId: "6",
+        truthId: "1"
       },
       {
-        id: 23,
+        id: "23",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 6,
-        truthId: 4
+        userId: "6",
+        truthId: "4"
       },
       {
-        id: 24,
+        id: "24",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 6,
-        truthId: 6
+        userId: "6",
+        truthId: "6"
       },
       {
-        id: 25,
+        id: "25",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 7,
-        truthId: 3
+        userId: "7",
+        truthId: "3"
       },
       {
-        id: 26,
+        id: "26",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 7,
-        truthId: 4
+        userId: "7",
+        truthId: "4"
       },
       {
-        id: 27,
+        id: "27",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 7,
-        truthId: 7
+        userId: "7",
+        truthId: "7"
       },
       {
-        id: 28,
+        id: "28",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 7,
-        truthId: 9
+        userId: "7",
+        truthId: "9"
       },
       {
-        id: 29,
+        id: "29",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 7,
-        truthId: 10
+        userId: "7",
+        truthId: "10"
       },
       {
-        id: 30,
+        id: "30",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 8,
-        truthId: 1
+        userId: "8",
+        truthId: "1"
       },
       {
-        id: 31,
+        id: "31",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 8,
-        truthId: 3
+        userId: "8",
+        truthId: "3"
       },
       {
-        id: 32,
+        id: "32",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 8,
-        truthId: 7
+        userId: "8",
+        truthId: "7"
       },
       {
-        id: 33,
+        id: "33",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 8,
-        truthId: 8
+        userId: "8",
+        truthId: "8"
       },
       {
-        id: 34,
+        id: "34",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 8,
-        truthId: 10
+        userId: "8",
+        truthId: "10"
       },
       {
-        id: 35,
+        id: "35",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 8,
-        truthId: 11
+        userId: "8",
+        truthId: "11"
       },
       {
-        id: 36,
+        id: "36",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 9,
-        truthId: 1
+        userId: "9",
+        truthId: "1"
       },
       {
-        id: 37,
+        id: "37",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 9,
-        truthId: 5
+        userId: "9",
+        truthId: "5"
       },
       {
-        id: 38,
+        id: "38",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 9,
-        truthId: 6
+        userId: "9",
+        truthId: "6"
       },
       {
-        id: 39,
+        id: "39",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 9,
-        truthId: 7
+        userId: "9",
+        truthId: "7"
       },
       {
-        id: 40,
+        id: "40",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 9,
-        truthId: 9
+        userId: "9",
+        truthId: "9"
       },
       {
-        id: 41,
+        id: "41",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 9,
-        truthId: 11
+        userId: "9",
+        truthId: "11"
       },
       {
-        id: 42,
+        id: "42",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 10,
-        truthId: 3
+        userId: "10",
+        truthId: "3"
       },
       {
-        id: 43,
+        id: "43",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 10,
-        truthId: 7
+        userId: "10",
+        truthId: "7"
       },
       {
-        id: 44,
+        id: "44",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 10,
-        truthId: 10
+        userId: "10",
+        truthId: "10"
       },
       {
-        id: 45,
+        id: "45",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 10,
-        truthId: 11
+        userId: "10",
+        truthId: "11"
       },
       {
-        id: 46,
+        id: "46",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 11,
-        truthId: 1
+        userId: "11",
+        truthId: "1"
       },
       {
-        id: 47,
+        id: "47",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 11,
-        truthId: 2
+        userId: "11",
+        truthId: "2"
       },
       {
-        id: 48,
+        id: "48",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 11,
-        truthId: 5
+        userId: "11",
+        truthId: "5"
       },
       {
-        id: 49,
+        id: "49",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 11,
-        truthId: 6
+        userId: "11",
+        truthId: "6"
       },
       {
-        id: 50,
+        id: "50",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 11,
-        truthId: 11
+        userId: "11",
+        truthId: "11"
       },
   ]);
   },

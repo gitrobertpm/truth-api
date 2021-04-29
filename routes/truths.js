@@ -10,6 +10,9 @@ const { Op } = require("sequelize");
 
 /* Schema for defining Truth data to return when responding to GET Truth requests */
 const getTruthsSchema = { 
+  order: [
+    ['createdAt', 'DESC']
+  ],
   attributes: { 
     exclude: ['createdAt', 'updatedAt'],
   },
@@ -34,7 +37,7 @@ router.get('/', asyncHandler( async (req, res, next) => { //throw new Error(500)
   console.log('Getting truths'.cyan);
   const truths = await Truth.findAll(getTruthsSchema);
   if (truths) console.log(`Retrieved ${truths.length} truths`.green);
-  res.status(200).json(truths.reverse());
+  res.status(200).json(truths);
 }));
 
 
@@ -65,25 +68,28 @@ router.get('/search/:query', asyncHandler( async (req, res, next) => { //throw n
         },
       }
     },
-      include: [{
-        model: User,
-        attributes: {
-          exclude: ['createdAt', 'updatedAt', 'password'],
-        },
-        as: 'truthsTeller',
+    order: [
+      ['createdAt', 'DESC']
+    ],
+    include: [{
+      model: User,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt', 'password'],
       },
-      {
-        model: Vote,
-        attributes: {
-          exclude: ['createdAt', 'updatedAt'],
-        },
-        as: 'truthsVotes',
-      }]
+      as: 'truthsTeller',
+    },
+    {
+      model: Vote,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt'],
+      },
+      as: 'truthsVotes',
+    }]
   });
 
   if (truths.length) {
     console.log(`Retrieved ${truths.length} truths`.green);
-    res.status(200).json(truths.reverse());
+    res.status(200).json(truths);
   } else {
     const err = new Error();
     err.status = 404;
