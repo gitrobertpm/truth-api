@@ -1,4 +1,7 @@
 "use strict";
+
+const Sequelize = require('sequelize');
+
 const {
   Model
 } = require("sequelize");
@@ -29,9 +32,9 @@ module.exports = (sequelize, DataTypes) => {
 
   User.init({
     id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+      type: DataTypes.UUID,
+      defaultValue: Sequelize.UUIDV4,
+      primaryKey: true
     },
     userName: {
       type: DataTypes.STRING,

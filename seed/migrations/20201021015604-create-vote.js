@@ -3,10 +3,10 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("Votes", {
       id: {
-        allowNull: false,
-        autoIncrement: true,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        allowNull: false
       },
       vote: {
         type: Sequelize.BOOLEAN,

@@ -1,4 +1,7 @@
 "use strict";
+
+const Sequelize = require('sequelize');
+
 const {
   Model
 } = require("sequelize");
@@ -28,9 +31,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   Vote.init({
     id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+      type: DataTypes.UUID,
+      defaultValue: Sequelize.UUIDV4,
+      primaryKey: true
     },
     vote: {
       type: DataTypes.BOOLEAN,
