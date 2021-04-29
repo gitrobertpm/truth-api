@@ -6,7 +6,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const colors = require('colors');
 const cors = require('cors');
-const { sequelize } = require('./models')
+const { sequelize } = require('./models');
+
+const ids = require('./seed/uuids');
+
+console.log('TEST', ids);
 
 const indexRouter = require('./routes');
 const usersRouter = require('./routes/users');

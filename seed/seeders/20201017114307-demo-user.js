@@ -1,12 +1,13 @@
 'use strict';
 
+const { users } = require('../uuids');
 const bcryptjs = require('bcryptjs');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Users', [
       {
-        id: "00000000-0000-0000-0000-000000000001",
+        id: users[0],
         userName: 'Luke Skywalker',
         emailAddress: 'luke@skywalker.com',
         password: bcryptjs.hashSync('pass'),
@@ -14,7 +15,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000002",
+        id: users[1],
         userName: 'Han Solo',
         emailAddress: 'han@solo.com',
         password: bcryptjs.hashSync('pass'),
@@ -22,7 +23,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000003",
+        id: users[2],
         userName: 'Mark Twain',
         emailAddress: 'mark@twain.com',
         password: bcryptjs.hashSync('pass'),
@@ -30,7 +31,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000004",
+        id: users[3],
         userName: 'Albert Einstein',
         emailAddress: 'albert@einstein.com',
         password: bcryptjs.hashSync('pass'),
@@ -38,7 +39,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000005",
+        id: users[4],
         userName: 'Winnie The Pooh',
         emailAddress: 'winnie@thepooh.com',
         password: bcryptjs.hashSync('pass'),
@@ -46,7 +47,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000006",
+        id: users[5],
         userName: 'Chuang Tzu',
         emailAddress: 'chang@tzu.com',
         password: bcryptjs.hashSync('pass'),
@@ -54,7 +55,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000007",
+        id: users[6],
         userName: 'Maya Angelou',
         emailAddress: 'maya@angelou.com',
         password: bcryptjs.hashSync('pass'),
@@ -62,7 +63,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000008",
+        id: users[7],
         userName: 'Helen Keller',
         emailAddress: 'helen@keller.com',
         password: bcryptjs.hashSync('pass'),
@@ -70,7 +71,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000009",
+        id: users[8],
         userName: 'Socrates',
         emailAddress: 'so@crates.com',
         password: bcryptjs.hashSync('pass'),
@@ -78,7 +79,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000010",
+        id: users[9],
         userName: 'Eleanore Roosevelt',
         emailAddress: 'eleanore@roosevelt.com',
         password: bcryptjs.hashSync('pass'),
@@ -86,7 +87,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: "00000000-0000-0000-0000-000000000011",
+        id: users[10],
         userName: 'Joe Walsh',
         emailAddress: 'joe@walsh.com',
         password: bcryptjs.hashSync('pass'),
