@@ -4,404 +4,404 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Votes', [
       {
-        id: "1",
+        id: "20000000-0000-0000-0000-000000000001",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "2",
+        id: "20000000-0000-0000-0000-000000000002",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "4"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000004"
       },
       {
-        id: "3",
+        id: "20000000-0000-0000-0000-000000000003",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "5"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000005"
       },
       {
-        id: "4",
+        id: "20000000-0000-0000-0000-000000000004",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "6"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000006"
       },
       {
-        id: "5",
+        id: "20000000-0000-0000-0000-000000000005",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "9"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000009"
       },
       {
-        id: "6",
+        id: "20000000-0000-0000-0000-000000000006",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "2"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000002"
       },
       {
-        id: "7",
+        id: "20000000-0000-0000-0000-000000000007",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "1",
-        truthId: "10"
+        userId: "00000000-0000-0000-0000-000000000001",
+        truthId: "10000000-0000-0000-0000-000000000010"
       },
       {
-        id: "8",
+        id: "20000000-0000-0000-0000-000000000008",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "2",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000002",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "9",
+        id: "20000000-0000-0000-0000-000000000009",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "2",
-        truthId: "5"
+        userId: "00000000-0000-0000-0000-000000000002",
+        truthId: "10000000-0000-0000-0000-000000000005"
       },
       {
-        id: "10",
+        id: "20000000-0000-0000-0000-000000000010",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "2",
-        truthId: "11"
+        userId: "00000000-0000-0000-0000-000000000002",
+        truthId: "10000000-0000-0000-0000-000000000011"
       },
       {
-        id: "11",
+        id: "20000000-0000-0000-0000-000000000011",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "3",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000003",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "12",
+        id: "20000000-0000-0000-0000-000000000012",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "3",
-        truthId: "3"
+        userId: "00000000-0000-0000-0000-000000000003",
+        truthId: "10000000-0000-0000-0000-000000000003"
       },
       {
-        id: "13",
+        id: "20000000-0000-0000-0000-000000000013",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "3",
-        truthId: "6"
+        userId: "00000000-0000-0000-0000-000000000003",
+        truthId: "10000000-0000-0000-0000-000000000006"
       },
       {
-        id: "14",
+        id: "20000000-0000-0000-0000-000000000014",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "3",
-        truthId: "8"
+        userId: "00000000-0000-0000-0000-000000000003",
+        truthId: "10000000-0000-0000-0000-000000000008"
       },
       {
-        id: "15",
+        id: "20000000-0000-0000-0000-000000000015",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "3",
-        truthId: "10"
+        userId: "00000000-0000-0000-0000-000000000003",
+        truthId: "10000000-0000-0000-0000-000000000010"
       },
       {
-        id: "16",
+        id: "20000000-0000-0000-0000-000000000016",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "4",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000004",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "17",
+        id: "20000000-0000-0000-0000-000000000017",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "4",
-        truthId: "4"
+        userId: "00000000-0000-0000-0000-000000000004",
+        truthId: "10000000-0000-0000-0000-000000000004"
       },
       {
-        id: "18",
+        id: "20000000-0000-0000-0000-000000000018",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "4",
-        truthId: "5"
+        userId: "00000000-0000-0000-0000-000000000004",
+        truthId: "10000000-0000-0000-0000-000000000005"
       },
       {
-        id: "19",
+        id: "20000000-0000-0000-0000-000000000019",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "4",
-        truthId: "9"
+        userId: "00000000-0000-0000-0000-000000000004",
+        truthId: "10000000-0000-0000-0000-000000000009"
       },
       {
-        id: "20",
+        id: "20000000-0000-0000-0000-000000000020",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "4",
-        truthId: "2"
+        userId: "00000000-0000-0000-0000-000000000004",
+        truthId: "10000000-0000-0000-0000-000000000002"
       },
       {
-        id: "21",
+        id: "20000000-0000-0000-0000-000000000021",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "4",
-        truthId: "10"
+        userId: "00000000-0000-0000-0000-000000000004",
+        truthId: "10000000-0000-0000-0000-000000000010"
       },
       {
-        id: "22",
+        id: "20000000-0000-0000-0000-000000000022",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "6",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000006",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "23",
+        id: "20000000-0000-0000-0000-000000000023",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "6",
-        truthId: "4"
+        userId: "00000000-0000-0000-0000-000000000006",
+        truthId: "10000000-0000-0000-0000-000000000004"
       },
       {
-        id: "24",
+        id: "20000000-0000-0000-0000-000000000024",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "6",
-        truthId: "6"
+        userId: "00000000-0000-0000-0000-000000000006",
+        truthId: "10000000-0000-0000-0000-000000000006"
       },
       {
-        id: "25",
+        id: "20000000-0000-0000-0000-000000000025",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "7",
-        truthId: "3"
+        userId: "00000000-0000-0000-0000-000000000007",
+        truthId: "10000000-0000-0000-0000-000000000003"
       },
       {
-        id: "26",
+        id: "20000000-0000-0000-0000-000000000026",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "7",
-        truthId: "4"
+        userId: "00000000-0000-0000-0000-000000000007",
+        truthId: "10000000-0000-0000-0000-000000000004"
       },
       {
-        id: "27",
+        id: "20000000-0000-0000-0000-000000000027",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "7",
-        truthId: "7"
+        userId: "00000000-0000-0000-0000-000000000007",
+        truthId: "10000000-0000-0000-0000-000000000007"
       },
       {
-        id: "28",
+        id: "20000000-0000-0000-0000-000000000028",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "7",
-        truthId: "9"
+        userId: "00000000-0000-0000-0000-000000000007",
+        truthId: "10000000-0000-0000-0000-000000000009"
       },
       {
-        id: "29",
+        id: "20000000-0000-0000-0000-000000000029",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "7",
-        truthId: "10"
+        userId: "00000000-0000-0000-0000-000000000007",
+        truthId: "10000000-0000-0000-0000-000000000010"
       },
       {
-        id: "30",
+        id: "20000000-0000-0000-0000-000000000030",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "8",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000008",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "31",
+        id: "20000000-0000-0000-0000-000000000031",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "8",
-        truthId: "3"
+        userId: "00000000-0000-0000-0000-000000000008",
+        truthId: "10000000-0000-0000-0000-000000000003"
       },
       {
-        id: "32",
+        id: "20000000-0000-0000-0000-000000000032",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "8",
-        truthId: "7"
+        userId: "00000000-0000-0000-0000-000000000008",
+        truthId: "10000000-0000-0000-0000-000000000007"
       },
       {
-        id: "33",
+        id: "20000000-0000-0000-0000-000000000033",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "8",
-        truthId: "8"
+        userId: "00000000-0000-0000-0000-000000000008",
+        truthId: "10000000-0000-0000-0000-000000000008"
       },
       {
-        id: "34",
+        id: "20000000-0000-0000-0000-000000000034",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "8",
-        truthId: "10"
+        userId: "00000000-0000-0000-0000-000000000008",
+        truthId: "10000000-0000-0000-0000-000000000010"
       },
       {
-        id: "35",
+        id: "20000000-0000-0000-0000-000000000035",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "8",
-        truthId: "11"
+        userId: "00000000-0000-0000-0000-000000000008",
+        truthId: "10000000-0000-0000-0000-000000000011"
       },
       {
-        id: "36",
+        id: "20000000-0000-0000-0000-000000000036",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "9",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000009",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "37",
+        id: "20000000-0000-0000-0000-000000000037",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "9",
-        truthId: "5"
+        userId: "00000000-0000-0000-0000-000000000009",
+        truthId: "10000000-0000-0000-0000-000000000005"
       },
       {
-        id: "38",
+        id: "20000000-0000-0000-0000-000000000038",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "9",
-        truthId: "6"
+        userId: "00000000-0000-0000-0000-000000000009",
+        truthId: "10000000-0000-0000-0000-000000000006"
       },
       {
-        id: "39",
+        id: "20000000-0000-0000-0000-000000000039",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "9",
-        truthId: "7"
+        userId: "00000000-0000-0000-0000-000000000009",
+        truthId: "10000000-0000-0000-0000-000000000007"
       },
       {
-        id: "40",
+        id: "20000000-0000-0000-0000-000000000040",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "9",
-        truthId: "9"
+        userId: "00000000-0000-0000-0000-000000000009",
+        truthId: "10000000-0000-0000-0000-000000000009"
       },
       {
-        id: "41",
+        id: "20000000-0000-0000-0000-000000000041",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "9",
-        truthId: "11"
+        userId: "00000000-0000-0000-0000-000000000009",
+        truthId: "10000000-0000-0000-0000-000000000011"
       },
       {
-        id: "42",
+        id: "20000000-0000-0000-0000-000000000042",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "10",
-        truthId: "3"
+        userId: "00000000-0000-0000-0000-000000000010",
+        truthId: "10000000-0000-0000-0000-000000000003"
       },
       {
-        id: "43",
+        id: "20000000-0000-0000-0000-000000000043",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "10",
-        truthId: "7"
+        userId: "00000000-0000-0000-0000-000000000010",
+        truthId: "10000000-0000-0000-0000-000000000007"
       },
       {
-        id: "44",
+        id: "20000000-0000-0000-0000-000000000044",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "10",
-        truthId: "10"
+        userId: "00000000-0000-0000-0000-000000000010",
+        truthId: "10000000-0000-0000-0000-000000000010"
       },
       {
-        id: "45",
+        id: "20000000-0000-0000-0000-000000000045",
         vote: false,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "10",
-        truthId: "11"
+        userId: "00000000-0000-0000-0000-000000000010",
+        truthId: "10000000-0000-0000-0000-000000000011"
       },
       {
-        id: "46",
+        id: "20000000-0000-0000-0000-000000000046",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "11",
-        truthId: "1"
+        userId: "00000000-0000-0000-0000-000000000011",
+        truthId: "10000000-0000-0000-0000-000000000001"
       },
       {
-        id: "47",
+        id: "20000000-0000-0000-0000-000000000047",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "11",
-        truthId: "2"
+        userId: "00000000-0000-0000-0000-000000000011",
+        truthId: "10000000-0000-0000-0000-000000000002"
       },
       {
-        id: "48",
+        id: "20000000-0000-0000-0000-000000000048",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "11",
-        truthId: "5"
+        userId: "00000000-0000-0000-0000-000000000011",
+        truthId: "10000000-0000-0000-0000-000000000005"
       },
       {
-        id: "49",
+        id: "20000000-0000-0000-0000-000000000049",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "11",
-        truthId: "6"
+        userId: "00000000-0000-0000-0000-000000000011",
+        truthId: "10000000-0000-0000-0000-000000000006"
       },
       {
-        id: "50",
+        id: "20000000-0000-0000-0000-000000000050",
         vote: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: "11",
-        truthId: "11"
+        userId: "00000000-0000-0000-0000-000000000011",
+        truthId: "10000000-0000-0000-0000-000000000011"
       },
   ]);
   },
