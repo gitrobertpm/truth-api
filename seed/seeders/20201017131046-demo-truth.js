@@ -1,6 +1,7 @@
 'use strict';
 
-const { users, truths } = require('../uuids');
+const { users } = require('../uuids');
+const { truths } = require('../uuids');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
