@@ -23,6 +23,7 @@ const getTruthsSchema = {
   {
     model: Vote,
     as: 'truthsVotes',
+    required: false,
     attributes: {
       exclude: ['createdAt', 'updatedAt'],
     }
@@ -40,7 +41,7 @@ const getTruthsSchema = {
 /* GET Truths */
 router.get('/', asyncHandler( async (req, res, next) => { //throw new Error(500);
   console.log('Getting truths'.cyan);
-  const truths = await Truth.findAll({ include: [{ all: true, nested: true }]});
+  const truths = await Truth.findAll(getTruthsSchema);
   if (truths) console.log(`Retrieved ${truths.length} truths`.green);
   res.status(200).json(truths.reverse());
 }));
