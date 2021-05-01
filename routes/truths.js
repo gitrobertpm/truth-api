@@ -55,13 +55,13 @@ router.get('/search/:query', asyncHandler( async (req, res, next) => { //throw n
     where: {
       [Op.or]: {
         truth: {
-          [Op.like]: `%${query}%`
+          [Op.iLike]: `%${query}%`
         },
         argument: {
-          [Op.like]: `%${query}%`
+          [Op.iLike]: `%${query}%`
         },
         tags: {
-          [Op.like]: `%${query}%`
+          [Op.iLike]: `%${query}%`
         },
         userId: {
           [Op.in]: ids
