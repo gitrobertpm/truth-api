@@ -54,11 +54,11 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Please provide a username."
         },
         len: {
-          args: [2, 10],
-          msg: "Username must be between 2 and 10 characters in length."
+          args: [2, 20],
+          msg: "Username must be between 2 and 20 characters in length."
         },
         notContains: {
-          args: [["<", ">", "{", "}", "(", ")", ":", ";"]],
+          args: [["<", ">", "{", "}", "(", ")", ":", ";", "*", "SELECT"]],
           msg: "Provided username contains illegal characters."
         }
       }
